@@ -27,7 +27,7 @@ const Home = () => {
                         Welcome to Bank Fraud Detection Mini System
                     </h1>
                     <h4 className="animate__animated animate__fadeInDown mt-2">
-                        By <span style={{ color: "#FFD700" }}>PARA Duo</span>
+                        By <span style={{ color: "#FFD700" }}>PARA DUO</span>
                     </h4>
                     <p className="lead animate__animated animate__fadeInUp mt-3">
                         Build amazing solutions in hours. Innovate. Create. Win!
@@ -70,7 +70,7 @@ const Home = () => {
                             <div className="card-body">
                                 <h5 className="card-title">Build Fast</h5>
                                 <p className="card-text">
-                                    Start quickly with ready-to-use frontend and backend setups.
+                                    Building ready-to-use frontend and backend setups.
                                 </p>
                             </div>
                         </div>

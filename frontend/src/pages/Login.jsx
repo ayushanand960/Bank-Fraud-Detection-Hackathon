@@ -50,7 +50,7 @@ const Login = ({ onLogin }) => {
   return (
     <div className="login-page d-flex align-items-center justify-content-center">
       <div className="login-card shadow-lg p-4 animate__animated animate__fadeIn">
-        <h2 className="text-center mb-4">Login to PARA Duo</h2>
+        <h2 className="text-center mb-4">Login</h2>
 
         {errors.form && (
           <div className="alert alert-danger">{errors.form}</div>
