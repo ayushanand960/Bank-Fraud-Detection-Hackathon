@@ -1,0 +1,45 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  font-family: Arial, sans-serif;
+}
+
+.login-page {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-card {
+  background: #ffffff;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  padding: 30px;
+}
+
+.login-card h2 {
+  color: #333;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  border: none;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+a {
+  color: #2575fc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

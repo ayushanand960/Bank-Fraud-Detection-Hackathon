@@ -1,0 +1,46 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
+
+/* Remove default margin/padding from body and html */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Hero section */
+.hero {
+  height: 80vh;
+  width: 100%; /* full width */
+  background: url("https://images.unsplash.com/photo-1601924582970-2a89b8f49dbd?auto=format&fit=crop&w=1950&q=80") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+   padding: 0; /* no extra padding */
+  max-width: 100%;
+  margin: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* dark overlay */
+}
+
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+}
+
+.container {
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
