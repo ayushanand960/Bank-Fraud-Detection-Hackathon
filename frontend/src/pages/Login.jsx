@@ -29,8 +29,17 @@ const Login = ({ onLogin }) => {
     setLoading(true);
     try {
       const res = await axiosInstance.post("/users/login/", form);
-      onLogin(res.data.user);
-      navigate("/dashboard");
+      const user = res.data.user;
+
+    onLogin(user); 
+    localStorage.setItem("user", JSON.stringify(user));
+
+    // 🔹 Redirect based on role
+    if (user.role === "admin") {
+      navigate("/admin-dashboard");
+    } else {
+      navigate("/user-dashboard");
+    }
     } catch (err) {
       const apiError = err.response?.data?.error || "Server Error";
       setErrors({ form: apiError });

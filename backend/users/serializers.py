@@ -48,9 +48,25 @@ class LoginSerializer(serializers.Serializer):
         return data
 
 
+
+class LoginResponseSerializer(serializers.ModelSerializer):
+    role = serializers.SerializerMethodField()
+
+    class Meta:
+        model = User
+        fields = ["id", "username", "email", "first_name", "last_name", "role"]
+
+    def get_role(self, obj):
+        if obj.is_superuser or obj.is_staff:
+            return "admin"
+        return "student"
+
+
+
+
 class UserSerializer(serializers.ModelSerializer):
     """Safe serializer to return user profile details (excludes password)"""
-
+    role = serializers.SerializerMethodField()
     class Meta:
         model = User
         fields = [
@@ -61,4 +77,9 @@ class UserSerializer(serializers.ModelSerializer):
             "last_name",
             "contact",
             "email",
+            "role",
         ]
+    def get_role(self, obj):
+        if obj.is_staff or obj.is_superuser:
+            return "admin"
+        return "user"

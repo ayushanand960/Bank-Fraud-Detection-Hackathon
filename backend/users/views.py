@@ -9,7 +9,7 @@ from django.conf import settings
 # from django.views.decorators.csrf import csrf_exempt
 from .authentication import CookieJWTAuthentication
 from .models import User
-from .serializers import UserSerializer, RegisterSerializer
+from .serializers import UserSerializer, RegisterSerializer, LoginResponseSerializer
 
 
 # Utility: set JWT as HttpOnly cookies
@@ -71,7 +71,8 @@ class LoginAPIView(APIView):
         response = Response(
             {
                 "message": "Login successful",
-                "user": UserSerializer(user).data,
+                # "user": UserSerializer(user).data,
+                "role": "admin" if user.is_staff or user.is_superuser else "user"
             },
             status=status.HTTP_200_OK,
         )
