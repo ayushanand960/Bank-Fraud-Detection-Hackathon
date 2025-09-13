@@ -7,7 +7,6 @@ from .models import Transaction
 from .serializers import TransactionSerializer
 from .utils import detect_and_update
 from rest_framework import status
-
 class SubmitTransactionAPIView(APIView):
     permission_classes = [IsAuthenticated]
     def post(self, request):
@@ -52,3 +51,27 @@ class FlaggedTransactionsAPIView(APIView):
         serializer = TransactionSerializer(qs, many=True)
         return Response(serializer.data)
 
+
+
+
+
+
+
+
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from rest_framework import status
+from .serializers import TransactionSerializer
+from .utils import detect_and_update
+
+class AddTransactionAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        serializer = TransactionSerializer(data=request.data, context={'request': request})
+        if serializer.is_valid():
+            tx = serializer.save(user=request.user)  # user explicitly pass karo
+            tx = detect_and_update(tx)
+            return Response(TransactionSerializer(tx).data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
