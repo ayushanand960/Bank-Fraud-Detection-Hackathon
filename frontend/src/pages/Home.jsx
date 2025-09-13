@@ -24,7 +24,7 @@ const Home = () => {
             <section className="hero d-flex align-items-center justify-content-center text-center">
                 <div className="hero-content text-white">
                     <h1 className="display-4 animate__animated animate__fadeInDown">
-                        Welcome to PARA Hackathon Portal
+                        Welcome to Bank Fraud Detection Mini System
                     </h1>
                     <h4 className="animate__animated animate__fadeInDown mt-2">
                         By <span style={{ color: "#FFD700" }}>PARA Duo</span>
@@ -57,7 +57,7 @@ const Home = () => {
 
             {/* Features Section */}
             <section className="container my-5">
-                <h2 className="text-center mb-4">What You Can Do</h2>
+                <h2 className="text-center mb-4">What We Can Do</h2>
                 <div className="row text-center">
                     <div className="col-md-4 mb-3">
                         <div className="card p-3 shadow animate__animated animate__fadeInLeft">
