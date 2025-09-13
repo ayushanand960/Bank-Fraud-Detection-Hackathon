@@ -32,7 +32,7 @@ const Home = () => {
                     <p className="lead animate__animated animate__fadeInUp mt-3">
                         Build amazing solutions in hours. Innovate. Create. Win!
                     </p>
-                    {!user && (
+                    {/* {!user && (
                         <div className="mt-4 animate__animated animate__zoomIn">
                             <Link to="/login" className="btn btn-light btn-lg mx-2">
                                 Login
@@ -41,7 +41,16 @@ const Home = () => {
                                 Register
                             </Link>
                         </div>
-                    )}
+                    )} */}
+
+                    <div className="mt-4 animate__animated animate__zoomIn text-center">
+                        <Link to="/login" className="btn btn-light btn-lg mx-2">
+                            Login
+                        </Link>
+                        <Link to="/register" className="btn btn-outline-light btn-lg mx-2">
+                            Register
+                        </Link>
+                    </div>
                 </div>
 
             </section>
@@ -102,14 +111,14 @@ const Home = () => {
             </section>
 
             {/* User Info Section */}
-            {user && (
+            {/* {user && (
                 <section className="container my-5">
                     <h3 className="text-center mb-3">Hello, {user.username}</h3>
                     <div className="card p-3 shadow">
                         <pre>{JSON.stringify(user, null, 2)}</pre>
                     </div>
-                </section>
-            )}
+                </section> */}
+            {/* )} */}
         </div>
     );
 };

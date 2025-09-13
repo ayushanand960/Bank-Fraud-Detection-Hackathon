@@ -29,13 +29,13 @@ const Login = ({ onLogin }) => {
     setLoading(true);
     try {
       const res = await axiosInstance.post("/users/login/", form);
-      const user = res.data.user;
+      const role = res.data.role;
 
-    onLogin(user); 
-    localStorage.setItem("user", JSON.stringify(user));
+    onLogin(role); 
+    localStorage.setItem("user", JSON.stringify(role));
 
     // 🔹 Redirect based on role
-    if (user.role === "admin") {
+    if (role === "admin") {
       navigate("/admin-dashboard");
     } else {
       navigate("/user-dashboard");
