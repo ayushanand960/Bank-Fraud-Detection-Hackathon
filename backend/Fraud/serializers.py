@@ -12,3 +12,4 @@ class TransactionSerializer(serializers.ModelSerializer):
 
     def get_reasons(self, obj):
         return obj.get_reasons()
+    
